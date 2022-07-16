@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@300;500&family=Domine&family=Permanent+Marker&display=swap');
+
+.instructions{
+    margin: 0 auto;
+    width: 85%;
+}
+input{
+    font-family: 'Catamaran', sans-serif;
+    font-family: 300;
+}
+.cont{
+    background-color: #e9e9e9;
+}
+img{
+    width: 50px;
+}
+
+::-webkit-input-placeholder{
+     color: white; /*edge  */
+}
+:-ms-input-placeholder{
+    color: white; /*internet explorer 10-11  */
+}
+::placeholder{
+    color: white;
+}
+
+/* ===================== PAGE 6 =============== */
+.word,
+.alternative{
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+.word{
+    border: 1px solid grey;
+    margin: 5px;
+}
+.red{
+    border: 1px solid red;
+    color: red;
+}
+.blue{ 
+    border: 1px solid blue;
+    color: blue;
+}
+.green{
+    border: 1px solid green;
+    color: green;
+}
+.yellow{
+    border: 1px solid rgb(221, 181, 3);
+    color: rgb(221, 181, 3);
+}
+.bg-red{ background-color: rgba(255, 0, 0, 0.712);}
+.hide{
+    display: none;
+}
+
+/* ==================================== IMAGE HOTSPOT  =====================================*/
+/* page 1  */
+#toolTipGenerator {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 1em;
+    font-size: .9em;
+    overflow: hidden;
+    width: 85%;
+    margin: 0 auto;
+    justify-content: center;
+}
+/* image section  */
+#toolTipGenerator .image {
+    cursor: crosshair;
+    width: 70%;
+}
+.img-drop-area img,
+#img-wrapper img{
+    width: 100%;
+    height: 100%;
+}
+.img-drop-area,
+#img-wrapper{
+    border: 5px dashed rgb(12, 172, 46)  ;
+    height: fit-content;
+    border-radius: 10px;
+    display: flex;
+}
+.img-drop-area.active{
+    border: 3px solid rgb(12, 172, 46) ;
+}
+.remove-border{
+    border: none !important;
+}
+.img-drop-area .icon{
+    margin-top: 4rem;
+    font-size: 100px;
+    color: grey;
+}
+.img-drop-area header{
+    font-size: 2rem;
+    color: grey;
+    text-align: center;
+}
+.img-drop-area span{
+    font-size: 1.6rem;
+    color: grey;
+}
+.img-drop-area button{
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+}
+#toolTipGenerator .properties {
+    width: 30%;
+    z-index: 10;
+}
+#toolTipGenerator .properties div {
+    padding: .5em 0;
+}
+#toolTipGenerator .properties div label {
+    display: inline-block;
+    white-space: nowrap;
+}
+.t_hotspot{
+    background-color: red;
+    position: absolute !important;
+    cursor: pointer;
+    height: 18px;
+    width: 18px;
+    z-index: 2;
+    border-radius: 50%;
+}
+.red{ 
+    background-color: red ;
+    border: 4px solid red;
+}
+.blue{
+    background-color: blue;
+    border: 4px solid blue;
+}
+.green{
+    background-color: green;
+    border: 4px solid green;
+}
+.yellow{
+    background-color: yellow;
+    border: 4px solid yellow;
+}
+.pink{
+    background-color: rgb(255, 70, 101);
+    border: 4px solid rgb(253, 71, 102);
+}
+.orange{
+    background-color: orange;
+    border: 4px solid orange;
+}
+.purple{
+    background-color: purple;
+    border: 4px solid purple;
+}
+.circle{
+    border-radius: 50%;
+}
+.square{
+    border-radius: 0px ;
+}
+.circle-outline{
+    border-radius: 50%;
+    background-color: transparent;
+}
+.square-outline{
+    border-radius: 0px;
+    background-color: transparent;
+}
+.small{
+    width: 12px;
+    height: 12px;
+}
+.medium{
+    height: 18px;
+    width: 18px;
+}
+.large{
+    height: 22px;
+    width: 22px;
+}
+.width-auto{
+    width: fit-content !important;
+}
+#img-wrapper{
+    user-select: none;
+}
+.image{
+    position: relative !important;
+}
+.imgHotspot-header{
+    background-color: #143b5c;
+    padding: 1rem;
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    width: 85%;
+    margin: 0px auto;
+}
+.spotWrapper{
+    position: absolute;
+    z-index: 10;
+}
+#t_toolTipWidthAuto:checked .toolTip{
+    width: fit-content;
+}
+#toast {
+    position: fixed;
+    bottom: -10vh;
+    left: 43%;
+    width: fit-content;
+    padding: 8px 29px;
+    z-index: 20;
+    border-radius: 10px;
+    font-size: 1.6rem;
+    box-shadow: 10px 10px 74px black;
+}
+.success-toast {
+    background-color: #12c712;
+    border: 2px solid rgb(106 255 106);
+    color: rgb(255 255 255);
+}
+.error-toast {
+    background-color: #ff2323;
+    border: 2px solid rgb(255 106 106);
+    color: rgb(255 255 255);
+}
+/* tooltip  */
+.toolTip {
+    height: 45px;
+    min-width: 80px;
+    padding: 8px;
+    font-size: 1rem;
+    background-color: black;
+    color: white;
+    opacity: 0.8;
+    z-index: 1;
+    display: none;
+    z-index: 11111;
+}
+.left{
+    top: -23px;
+    left: 22px;
+    border-radius: 13px 13px 13px 1px;
+}
+.right{
+    right: 1px;
+    top: -25px;
+    border-radius: 13px 13px 1px 13px;  
+}
+.top{
+    top: -47px;
+    left: 5px;
+    border-radius: 13px 13px 13px 0px;
+}
+.bottom{
+    bottom: -64px;
+    left: 5px;
+    border-radius: 0px 13px 13px 13px;
+}
+#t_toolTipWidthAuto:checked .toolTip{
+    width: fit-content !important;
+}
+.tooltip-inp{
+    padding: -14px;
+    margin: 2px;
+    width: auto;
+    padding: 8px;
+    background: none;
+    border: none;
+    outline: none;
+}
+#take-quiz-btn{
+    width: 142px;
+    font-size: 1.5rem;
+    margin: 16px auto;
+}
+#quiz_question{
+    font-family: 'Domine', serif;
+    margin-left: 7%;
+}
+.quiz_quest{
+    font-size: 3rem;
+}
+.quiz-circle{
+    border: 4px solid red;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#done-btn{
+    margin-bottom: 2rem;
+}
+
+/* ========================================================================================== */
+
+/* FOOTER  */
+footer{
+    padding: 20px;
+    background-color: rgb(26, 25, 25);
+    color: white;
+}
+footer p{
+    margin: 0;
+}
+
+/* ================ MEDIA QUERIES MOBILE ================== */
+@media screen and (max-width: 700px)  {
+.nav2-item .navItems {
+	font-weight: normal;
+	font-family: 'Catamaran', sans-serif;
+	margin-bottom: 0px;
+	color: white;
+	font-size: 1.3rem;
+}
+.material-icons {
+	font-size: 1.5em;
+	color: white;
+	padding-bottom: .2em;
+	/* padding-right: .1em; */
+}
+}
+/* ================ MEDIA QUERIES MOBILE VERY SMALL SCREEN ================== */
+@media screen and (max-width: 470px)  {
+.nav2-item .navItems {
+	font-weight: normal;
+	font-family: 'Catamaran', sans-serif;
+	margin-bottom: 0px;
+	color: white;
+	font-size: 1rem;
+}
+.material-icons {
+	font-size: 1.1em;
+	color: white;
+	padding-bottom: .2em;
+	/* padding-right: .1em; */
+}
+}
+
+/* ================ MEDIA QUERIES TABS ================== */
+@media screen and (min-width: 700px) and (max-width: 1200px)  {
+
+.material-icons {
+	font-size: 3.1em;
+	
+}
+.nav2-item .navItems {
+	font-size: 1.5rem;
+}
+
+
+
+}
+/* ================ MEDIA QUERIES TABS CARDS ================== */
+@media screen and (min-width: 450px) and (max-width: 552px)  {
+	.card {
+	max-width: 10.8rem;
+}
+}
+

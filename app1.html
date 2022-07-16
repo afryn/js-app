@@ -1,0 +1,150 @@
+</html>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>1</title>
+
+
+    <!-- jquery  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <!-- draggable scripts  -->
+    <script src="https://unpkg.com/draggabilly@2/dist/draggabilly.pkgd.min.js"></script>
+
+
+    <!-- bootstrap js  -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+        crossorigin="anonymous"></script>
+
+    <!-- css  -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/phone.css" media="(max-width:855px)">
+
+    <!-- fontawesome  -->
+    <script src="https://kit.fontawesome.com/3a912e8c1f.js" crossorigin="anonymous"></script>
+
+    <!-- sweetalert  -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</head>
+
+<body>
+    <div id="toast">toast msg</div>
+    
+    <!-- container  -->
+    <div class="cont d-flex flex-column">
+        <header class="imgHotspot-header my-2">Add and label a diagram / picture</header>
+        <div class="instructions p-2 shadow bg-light">
+            <ul >
+                <h3>Instructions:</h3>
+                <li>Create atleast two spots to go for quiz</li>
+                <li>When done customizing a spot, click on "Done with this Spot".</li>
+            </ul>
+        </div>
+        <h1 id="quiz_question"></h1>
+        
+        <div id="toolTipGenerator" class="my-auto d-flex align-items-center">
+            <section class="image img-drop-area drop-area align-items-center justify-content-center flex-column">
+                <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                <header class="fw-bold">Drag and Drop to Upload file</header>
+                <span class="fw-bold">OR</span>
+                <button  type="button" class="btn btn-lg btn-outline-success">Browse file</button>
+                <input type="file" hidden id="drag-area-btn">
+            </section>
+            <section class="properties">
+                <form action="" class="form-control">
+                    <!-- spot type  -->
+                    <div>
+                        <label for="t_spotType">Spot Type:</label>
+                        <select id="t_spotType">
+                            <option value="circle">Circle</option>
+                            <option value="square">Square</option>
+                            <option value="circle-outline">Circle Outline</option>
+                            <option value="square-outline">Square Outline</option>
+                        </select>
+                    </div>
+                    
+                    <!-- spot size  -->
+                    <div>
+                        <label for="t_spotSize">Spot Size:</label>
+                        <select id="t_spotSize" ar>
+                            <option value="small">Small</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="large">Large</option>
+                        </select>
+                    </div>
+
+                    <!-- spot color  -->
+                    <div>
+                        <label for="t_spotColor">Spot Color:</label>
+                        <select id="t_spotColor">
+                            <option value="red">Red</option>
+                            <option value="green">Green</option>
+                            <option value="blue">Blue</option>
+                            <option value="purple">Purple</option>
+                            <option value="pink">Pink</option>
+                            <option value="orange">Orange</option>
+                        </select>
+                    </div>
+
+
+                    <!-- tooltip width -->
+                    <div>
+                        <label for="t_toolTipWidth">Tooltip Width:</label>
+                        <input type="text" id="t_toolTipWidth" value="80"> px
+                        <br>
+                        <button type="button" id="t_toolTipWidthAuto" class="btn btn-success btn-sm">Auto</button>
+                    </div>
+
+                    <!-- pop up position  -->
+                    <div>
+                        <label for="t_popupPosition">Tooltip Position:</label>
+                        <select id="t_popupPosition">
+                            <option value="left">Left</option>
+                            <option value="right">Right</option>
+                            <option value="top">Top</option>
+                            <option value="bottom">Bottom</option>
+                        </select>
+                        <br>
+                    </div>
+
+                    <!-- content  -->
+                    <div>
+                        <label for="t_content" class="d-block">Hotspot Name:</label>
+                        <textarea id="t_content"></textarea>
+                        <br>
+                        <button type="button" class="btn btn-danger my-1" id="done-btn">Done with this Spot</button>
+                    </div>
+
+                    <!-- delete spot  -->
+                    <div>
+                        <label>Delete selected spot?</label>
+                        <button id="t_deleteSpot" type="button" class="btn btn-danger btn-sm">Delete Spot</button>
+                    </div>
+
+                </form>
+            </section>
+        </div>
+        <button class="btn btn-danger btn-lg" id="take-quiz-btn" disabled>Take Quiz</button>
+    </div>
+
+    <!-- main js  -->
+    <script src="js/imageHospot.js"></script>
+
+</body>
+
+</html>
